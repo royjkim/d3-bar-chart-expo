@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Roy-Web-D3</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="robots" content="noindex">
+    <style>
+      html, body {
+        width: 100%;
+        height: 100%;
+        font-family: 'Open Sans', sans-serif;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+      }
+
+      .header h3 {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        letter-spacing: -1px;
+        padding-left: calc(100vw * 0.01);
+        margin: 0;
+      }
+
+      #btnContainer {
+        display: flex;
+        flex: 2;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 10px;
+      }
+
+      #btnContainer button {
+        margin-left: 2px;
+        margin-right: 2px;
+      }
+
+      svg {
+        flex: 9;
+        border: 1px solid lightgray;
+      }
+
+      svg text, h3 {
+        -webkit-user-select: none;
+           -mox-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+      }
+
+      .myBtn {
+        padding: 3px 6px;
+      }
+
+      .btnTxt,
+      .myIcon {
+        font-size: 0.8em;
+      }
+
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: crispEdges;
+      }
+
+      .axis text {
+        font-family: 'Open-Sans' sans-serif;
+        font-size: 11px;
+      }
+
+      .labelContainer text {
+        pointer-events: none;
+      }
+
+      svg rect.barRect:hover, svg rect.barRect.hover, svg rect.barRect:active, svg rect.barRect:active {
+        fill: green;
+      }
+
+    </style>
+    <script type="text/javascript" src="./barChart.js">
+    </script>
+  </head>
+<body>
+
+  <div class="header">
+    <h3>Bar Chart</h3>
+    <div id='btnContainer'>
+      <button id='plusBtn' class="btn btn-primary myBtn" title="add data one by one. max : 23">
+        <span class="glyphicon glyphicon-plus myIcon"></span>
+        <span class="btnTxt">Add</span>
+      </button>
+      <button id='removeBtn' class="btn btn-primary myBtn" title="remove data one by one. min : 5">
+        <span class="glyphicon glyphicon-remove myIcon"></span>
+        <span class="btnTxt">Remove</span>
+      </button>
+      <button id='sortBtn' class="btn btn-primary myBtn" title="ascending/descending order/not ordered">
+        <span class="glyphicon glyphicon-sort myIcon"></span>
+        <span class="btnTxt">Sort</span>
+      </button>
+      <button id="resetBtn" class="btn btn-default myBtn" title="change all data value">
+        <span class="glyphicon glyphicon-repeat myIcon"></span>
+        <span class="btnTxt">Reset</span>
+      </button>
+    </div>
+  </div>
+  <svg></svg>
+
+</body>
+</html>
